@@ -6,6 +6,7 @@ from torchvision.models import resnet18
 from torchvision import transforms
 from PIL import Image
 import os
+import requests
 from PIL import Image, ImageDraw, ImageFont
 
 
