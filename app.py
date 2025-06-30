@@ -3,6 +3,7 @@ import torch
 import numpy as np
 import requests
 import cv2
+import torchvision.models as models
 from torchvision.models import resnet18
 from torchvision import transforms
 from PIL import Image
