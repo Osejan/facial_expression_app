@@ -8,10 +8,22 @@ from PIL import Image
 import os
 from PIL import Image, ImageDraw, ImageFont
 
+
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 if st.button("❌ Kill Terminal"):
     st.write("Shutting down the terminal...")
     os._exit(0)  
+
+
+MODEL_PATH = "resnet_emotion.pt"
+MODEL_URL = "https://drive.google.com/uc?export=download&id=1K_E4115u76hT7PmIK2vYq7pwC5VPO81g"
+
+# Download model only once
+if not os.path.exists(MODEL_PATH):
+    with st.spinner("Downloading model..."):
+        response = requests.get(MODEL_URL)
+        with open(MODEL_PATH, "wb") as f:
+            f.write(response.content)
 
 
 # Load a Unicode-capable font (DejaVuSans is bundled with many OSes)
@@ -39,7 +51,7 @@ def detect_and_predict_faces(frame, limit_faces=None):
 
     return predictions
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device("cpu")
 
 model = resnet18(pretrained=False)
 model.conv1 = torch.nn.Conv2d(1, 64, kernel_size=7, stride=2, padding=3, bias=False)
