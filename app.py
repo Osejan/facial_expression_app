@@ -54,7 +54,7 @@ def detect_and_predict_faces(frame, limit_faces=None):
 
 device = torch.device("cpu")
 
-model = torch.load("resnet_emotion.pt", map_location=device)
+model = torch.load("resnet_emotion.pt", map_location=device, weights_only=False)
 model.conv1 = torch.nn.Conv2d(1, 64, kernel_size=7, stride=2, padding=3, bias=False)
 model.fc = torch.nn.Linear(model.fc.in_features, 7)
 model.to(device)
