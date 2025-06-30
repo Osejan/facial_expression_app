@@ -8,24 +8,17 @@ from torchvision.models import resnet18
 from torchvision import transforms
 from PIL import Image
 import os
+import gdown
 from PIL import Image, ImageDraw, ImageFont
-
-
-face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-if st.button("❌ Kill Terminal"):
-    st.write("Shutting down the terminal...")
-    os._exit(0)  
 
 
 MODEL_PATH = "resnet_emotion.pt"
 MODEL_URL = "https://drive.google.com/uc?export=download&id=1K_E4115u76hT7PmIK2vYq7pwC5VPO81g"
 
-# Download model only once
+
 if not os.path.exists(MODEL_PATH):
     with st.spinner("Downloading model..."):
-        response = requests.get(MODEL_URL)
-        with open(MODEL_PATH, "wb") as f:
-            f.write(response.content)
+        gdown.download(MODEL_URL, MODEL_PATH, quiet=False)
 
 
 # Load a Unicode-capable font (DejaVuSans is bundled with many OSes)
