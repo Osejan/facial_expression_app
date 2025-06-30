@@ -1,12 +1,12 @@
 import streamlit as st
 import torch
 import numpy as np
+import requests
 import cv2
 from torchvision.models import resnet18
 from torchvision import transforms
 from PIL import Image
 import os
-import requests
 from PIL import Image, ImageDraw, ImageFont
 
 
