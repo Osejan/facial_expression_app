@@ -4,5 +4,6 @@ torchvision
 torchaudio
 opencv-python-headless
 Pillow
+gdown
 numpy
 requests
