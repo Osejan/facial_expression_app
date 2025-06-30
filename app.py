@@ -1,9 +1,9 @@
 import streamlit as st
 import torch
 import numpy as np
+import torchvision.models as models
 import requests
 import cv2
-import torchvision.models as models
 from torchvision.models import resnet18
 from torchvision import transforms
 from PIL import Image
