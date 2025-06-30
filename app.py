@@ -171,7 +171,7 @@ if mode == "Webcam":
             st.error(f"❌ Error: {e}")
         finally:
             cap.release()
-            cv2.destroyAllWindows()
+            #cv2.destroyAllWindows()
             st.session_state.run_webcam = False
 
 
