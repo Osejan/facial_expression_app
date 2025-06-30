@@ -155,23 +155,11 @@ if mode == "Webcam":
     # Convert back to NumPy for Streamlit
                     frame = np.array(image_pil)
                     FRAME_WINDOW.image(frame)
-
-                '''for (x, y, w, h), label, emoji in results:
-                                   for (x, y, w, h), label, emoji in results:
-                    cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
-                    st.markdown(f"**Detected:** {label.upper()} {emoji}")
-                    text = f"{label.upper()} {emoji}"
-                    cv2.putText(frame, text, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX,
-                                0.9, (0, 255, 0), 2)'''
-                #frame = np.array(image_pil)
-                #FRAME_WINDOW.image(frame)
-                #FRAME_WINDOW.image(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
-
+                    
         except Exception as e:
             st.error(f"❌ Error: {e}")
         finally:
             cap.release()
-            #cv2.destroyAllWindows()
             st.session_state.run_webcam = False
 
 
