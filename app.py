@@ -19,13 +19,13 @@ MODEL_URL =  "https://drive.google.com/uc?export=download&id=18Fu7zBTW0vZzJDq9UH
 if not os.path.exists(MODEL_PATH):
     with st.spinner("Downloading model..."):
         gdown.download(MODEL_URL, MODEL_PATH, quiet=False)
-
+face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
 # Load a Unicode-capable font (DejaVuSans is bundled with many OSes)
 font = ImageFont.truetype("DejaVuSans.ttf", 32)
 def detect_and_predict_faces(frame, limit_faces=None):
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
+    
     faces = face_cascade.detectMultiScale(gray, scaleFactor=1.2, minNeighbors=5)
     class_names = ['angry', 'disgust', 'fear', 'happy', 'neutral', 'sad', 'surprise']
     if limit_faces:
