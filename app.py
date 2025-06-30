@@ -13,7 +13,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 MODEL_PATH = "resnet_emotion.pt"
-MODEL_URL = "https://drive.google.com/uc?export=download&id=1K_E4115u76hT7PmIK2vYq7pwC5VPO81g"
+MODEL_URL =  "https://drive.google.com/uc?export=download&id=18Fu7zBTW0vZzJDq9UHVvjugU56QXqhs-"
 
 
 if not os.path.exists(MODEL_PATH):
