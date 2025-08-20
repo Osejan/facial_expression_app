@@ -69,16 +69,20 @@ facial_expression_app/
     git lfs pull   
 pulls the .pt file if the pointer exists in repo
 
+---
+
 ## ▶️ Run the App (Local)
 
-1) streamlit run app.py
+1)      streamlit run app.py
 2) Open the link shown (usually http://localhost:8501)
 3) In the sidebar, choose Upload Image or Webcam
 (Webcam only works locally; not on Streamlit Cloud)
 
+---
+
 ## 🙏 Acknowledgements
 
-FER2013 Dataset (Kaggle)
-PyTorch / TorchVision
-OpenCV
-Streamlit
+    FER2013 Dataset (Kaggle)
+    PyTorch / TorchVision
+    OpenCV
+    Streamlit
